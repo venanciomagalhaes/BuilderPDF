@@ -3,16 +3,16 @@
 namespace Venancio\tests;
 
 use PHPUnit\Framework\TestCase;
-use Venancio\Builderpdf\PdfBuilder;
+use Venancio\Builderpdf\BuilderPdf;
 
-class PdfBuilderTest extends TestCase
+class BuilderPdfTest extends TestCase
 {
     /**
      * @test
      */
     public function testSavePdf()
     {
-        $pathSavePdf = (new PdfBuilder())
+        $pathSavePdf = (new BuilderPdf())
             ->setPaper()
             ->setHTML(file_get_contents( __DIR__ . "/template.php"))
             ->setPathToSaveFile(__DIR__ . "/pdf", "meu-teste.pdf")
@@ -25,13 +25,13 @@ class PdfBuilderTest extends TestCase
      */
     public function testDestroyPdf()
     {
-        $pathSavePdf = (new PdfBuilder())
+        $pathSavePdf = (new BuilderPdf())
             ->setPaper()
             ->setHTML(file_get_contents( __DIR__ . "/template.php"))
             ->setPathToSaveFile(__DIR__ . "/pdf", "meu-teste.pdf")
             ->save();
         $this->assertTrue(file_exists($pathSavePdf));
-        PdfBuilder::destroy($pathSavePdf);
+        BuilderPdf::destroy($pathSavePdf);
         $this->assertFalse(file_exists($pathSavePdf));
     }
 }

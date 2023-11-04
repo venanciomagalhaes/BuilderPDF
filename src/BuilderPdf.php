@@ -5,7 +5,7 @@ namespace Venancio\Builderpdf;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-class PdfBuilder
+class BuilderPdf
 {
     private Dompdf $pdf;
 
