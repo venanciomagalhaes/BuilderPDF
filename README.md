@@ -30,7 +30,7 @@ use Venancio\Builderpdf\BuilderPdf;
 
 // Saving a PDF file
 $pathSavePdf = (new BuilderPdf())
-      ->setPaper()
+      ->setPaper('A3', 'landscape')
       ->setHTML(file_get_contents(__DIR__ . "/template.php"))
       ->setPathToSaveFile(__DIR__ . "/pdf", "my-test.pdf")
       ->save();
