@@ -1,0 +1,24 @@
+{
+    "name": "venancio/builderpdf",
+    "description": "Simple and effective PDF builder using the DomPDF library",
+    "require": {
+        "dompdf/dompdf": "^2.0",
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Venancio\\Builderpdf\\": "src/",
+            "Venancio\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Venancio Magalhaes",
+            "email": "venanciomagalhaesd@gmail.com"
+        }
+    ]
+}
